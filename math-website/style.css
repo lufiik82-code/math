@@ -1,0 +1,106 @@
+/* Basic layout and typography */
+:root{
+  --bg: #f3f5ff;
+  --card: #ffffff;
+  --text: #222;
+  --accent: #4c6ef5;
+  --good: #2e8b57;
+  --bad: #d9534f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  transition: background .25s, color .25s;
+}
+header{
+  background:var(--accent);
+  color:white;
+  padding:18px 14px;
+  text-align:center;
+}
+.header-controls{
+  margin-top:10px;
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+}
+.header-controls select,
+.header-controls button{
+  padding:6px 10px;
+  border-radius:6px;
+  border:none;
+  font-size:0.95rem;
+  cursor:pointer;
+}
+
+/* Main content containers */
+main{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+  padding:22px 10px 60px;
+}
+.quiz-box, .stats-box{
+  width:min(680px, 92%);
+  max-width:700px;
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(40,40,80,0.08);
+}
+.quiz-box h2{margin-top:0}
+.choices{margin:10px 0}
+.choices button{
+  display:block;
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  font-size:1rem;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  background:transparent;
+  cursor:pointer;
+  text-align:left;
+}
+.input-area{display:flex; gap:8px}
+.answer-input input{
+  width:100%;
+  padding:10px;
+  font-size:1rem;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.12);
+}
+.controls{display:flex; gap:8px; margin-top:10px}
+button{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:1rem;
+}
+button.new-question-btn{background:#67c23a}
+.feedback{margin-top:12px; font-weight:600}
+
+/* Dark mode */
+body.dark-mode{
+  --bg:#151518;
+  --card:#222227;
+  --text:#e6e6e6;
+  --accent:#6b8cff;
+  --good:#2fb06a;
+  --bad:#ff6b6b;
+}
+body.dark-mode header{background:#0f1724}
+
+/* responsive */
+@media (min-width:900px){
+  main{flex-direction:row; align-items:flex-start; gap:22px; justify-content:center}
+  .quiz-box{flex:1; max-width:520px}
+  .stats-box{width:260px; align-self:flex-start}
+}
