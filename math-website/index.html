@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learn Math — Practice & Track</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Learn Math</h1>
+    <p>Practice math, track progress, and improve your skills!</p>
+    <div class="header-controls">
+      <label for="topicSelect">Topic:</label>
+      <select id="topicSelect">
+        <option value="add">Addition</option>
+        <option value="sub">Subtraction</option>
+        <option value="mul">Multiplication</option>
+        <option value="div">Division</option>
+        <option value="sqrt">Square Roots</option>
+        <option value="fractions">Fractions</option>
+      </select>
+
+      <button id="darkModeToggle" aria-pressed="false">Toggle Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="quiz-box">
+      <h2>Math Quiz</h2>
+      <p id="question">Loading...</p>
+
+      <div id="choices" class="choices" aria-live="polite"></div>
+
+      <div class="answer-input">
+        <input type="text" id="answerInput" placeholder="Type answer (if no choices)" />
+      </div>
+
+      <div class="controls">
+        <button id="submitBtn">Submit</button>
+        <button id="newBtn" class="new-question-btn">New Question</button>
+      </div>
+
+      <p id="feedback" class="feedback" role="status"></p>
+    </section>
+
+    <section class="stats-box">
+      <h2>Your Progress</h2>
+      <p>Score: <span id="score">0</span></p>
+      <p>Streak: <span id="streak">0</span></p>
+      <p>XP: <span id="xp">0</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ to help you learn math.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
